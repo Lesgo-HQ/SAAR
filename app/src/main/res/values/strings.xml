@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SAAR</string>
+    <string name="accessibility_description">Learns user-demonstrated actions and replays them with your approval. It pauses before login, OTP, password, or payment screens.</string>
+</resources>
