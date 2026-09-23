@@ -5,6 +5,7 @@ import 'package:uuid/uuid.dart';
 import '../models/flow.dart';
 import '../models/replay_session.dart';
 import '../models/role_ontology.dart';
+import '../models/screen_snapshot.dart';
 import '../models/ui_node.dart';
 import 'accessibility_bridge.dart';
 import 'clarification_service.dart';
@@ -105,11 +106,30 @@ class ReplayEngine {
         await Future<void>.delayed(_stepDelay);
         continue;
       }
-
+      final roles = _rolesForTree(tree);
+      if (!step.validatePrecondition(roles)) {
+        session.status = ReplayStatus.recovering;
+        session.recoveryAttempts++;
+        await _recovery.recover(tree);
+        await Future<void>.delayed(_stepDelay);
+        continue;
+      }
       final target = _ranker.best(tree.flatten(), step.targetRole)?.node;
       if (target != null && await _performAction(step, target, session.slots)) {
+        await Future<void>.delayed(const Duration(milliseconds: 600));
         final afterTree = await _bridge.getLastTree();
         if (CredentialGuard.isSensitiveScreen(afterTree)) return _StepResult.halted;
+        if (afterTree != null) {
+          final afterRoles = _rolesForTree(afterTree);
+          if (!step.validatePostcondition(afterRoles)) {
+            session.status = ReplayStatus.recovering;
+            session.recoveryAttempts++;
+            await _recovery.recover(afterTree);
+            await Future<void>.delayed(_stepDelay);
+            continue;
+          }
+        }
+        session.lastScreen = afterTree != null ? ScreenSnapshot.fromTree(afterTree, rolesForNode: (n) => [RoleOntology.inferRole(n)].whereType<String>()) : null;
         return _StepResult.completed;
       }
       session.status = ReplayStatus.recovering;
@@ -118,6 +138,15 @@ class ReplayEngine {
       await Future<void>.delayed(_stepDelay);
     }
     return _StepResult.waiting;
+  }
+
+  Set<String> _rolesForTree(UiNode tree) {
+    final s = <String>{};
+    for (final n in tree.flatten()) {
+      final r = RoleOntology.inferRole(n);
+      if (r != null) s.add(r);
+    }
+    return s;
   }
 
   Future<bool> _performAction(FlowStep step, UiNode target, Map<String, dynamic> slots) async {

@@ -7,14 +7,22 @@ class FlowSynthesizer {
 
   FlowSynthesizer(this._llm);
 
-  /// Synthesize a Flow from action trace and user's utterance
   Future<Flow> synthesize(String utterance, List<ActionTraceEvent> trace) async {
-    // 1. Filter noise from trace (drop non-task actions)
     final filtered = _filterNoise(trace);
-    // 2. Convert to JSON-serializable format
     final traceJson = filtered.map((e) => e.toJson()).toList();
-    // 3. Call LLM to synthesize
-    return await _llm.synthesizeFlow(utterance, traceJson);
+    final flow = await _llm.synthesizeFlow(utterance, traceJson);
+    _validate(flow);
+    return flow;
+  }
+
+  void _validate(Flow f) {
+    const allowed = {'tap','type','select','swipe','set_quantity','scroll','stop_before'};
+    for (final s in f.steps) {
+      if (!allowed.contains(s.action)) throw Exception('Invalid action ${s.action}');
+      if (s.targetRole.isEmpty) throw Exception('Missing target_role');
+      if (RegExp(r'password|otp|pin|cvv|payment|pay\b|place_order', caseSensitive:false).hasMatch(s.targetRole)) throw Exception('Credential/payment role not allowed');
+    }
+    if (f.flowId.isEmpty || f.triggerIntent.isEmpty) throw Exception('Invalid flow metadata');
   }
 
   /// Filter noise from action trace.

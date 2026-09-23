@@ -32,12 +32,35 @@ class Slot {
   }
 }
 
+class StepPrecondition {
+  final List<String> requiredRoles;
+  final List<String> forbiddenRoles;
+  const StepPrecondition({this.requiredRoles = const [], this.forbiddenRoles = const []});
+  factory StepPrecondition.fromJson(Map<String, dynamic> j) => StepPrecondition(
+    requiredRoles: (j['required_roles'] as List<dynamic>? ?? []).map((e) => e as String).toList(),
+    forbiddenRoles: (j['forbidden_roles'] as List<dynamic>? ?? []).map((e) => e as String).toList(),
+  );
+  Map<String, dynamic> toJson() => {'required_roles': requiredRoles, 'forbidden_roles': forbiddenRoles};
+}
+
+class StepPostcondition {
+  final List<String> requiredRoles;
+  const StepPostcondition({this.requiredRoles = const []});
+  factory StepPostcondition.fromJson(Map<String, dynamic> j) => StepPostcondition(
+    requiredRoles: (j['required_roles'] as List<dynamic>? ?? []).map((e) => e as String).toList(),
+  );
+  Map<String, dynamic> toJson() => {'required_roles': requiredRoles};
+}
+
 class FlowStep {
   final int id;
   final String action;
   final String targetRole;
   final String? valueSlot;
   final String? valueLiteral;
+  final StepPrecondition? precondition;
+  final StepPostcondition? postcondition;
+  final List<String> recovery;
 
   FlowStep({
     required this.id,
@@ -45,6 +68,9 @@ class FlowStep {
     required this.targetRole,
     this.valueSlot,
     this.valueLiteral,
+    this.precondition,
+    this.postcondition,
+    this.recovery = const [],
   });
 
   factory FlowStep.fromJson(Map<String, dynamic> json) {
@@ -54,6 +80,9 @@ class FlowStep {
       targetRole: json['target_role'] as String,
       valueSlot: json['value_slot'] as String?,
       valueLiteral: json['value_literal'] as String?,
+      precondition: json['precondition'] != null ? StepPrecondition.fromJson(json['precondition'] as Map<String, dynamic>) : null,
+      postcondition: json['postcondition'] != null ? StepPostcondition.fromJson(json['postcondition'] as Map<String, dynamic>) : null,
+      recovery: (json['recovery'] as List<dynamic>? ?? []).map((e) => e as String).toList(),
     );
   }
 
@@ -64,7 +93,22 @@ class FlowStep {
       'target_role': targetRole,
       if (valueSlot != null) 'value_slot': valueSlot,
       if (valueLiteral != null) 'value_literal': valueLiteral,
+      if (precondition != null) 'precondition': precondition!.toJson(),
+      if (postcondition != null) 'postcondition': postcondition!.toJson(),
+      if (recovery.isNotEmpty) 'recovery': recovery,
     };
+  }
+
+  bool validatePrecondition(Set<String> screenRoles) {
+    if (precondition == null) return true;
+    if (precondition!.requiredRoles.any((r) => !screenRoles.contains(r))) return false;
+    if (precondition!.forbiddenRoles.any(screenRoles.contains)) return false;
+    return true;
+  }
+
+  bool validatePostcondition(Set<String> screenRoles) {
+    if (postcondition == null) return true;
+    return postcondition!.requiredRoles.every(screenRoles.contains);
   }
 }
 

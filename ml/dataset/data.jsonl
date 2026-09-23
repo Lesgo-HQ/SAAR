@@ -1,0 +1,440 @@
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for atta", "intent": "search_item", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 3 packets", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add sugar to cart", "intent": "add_to_cart", "slots": {"item": "atta"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get bread delivered to my home", "intent": "order_item", "slots": {"item": "oil", "address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy eggs 3 packets", "intent": "order_item", "slots": {"item": "atta", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find milk on flipkart", "intent": "search_item", "slots": {"item": "eggs"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get oil delivered to my office", "intent": "order_item", "slots": {"item": "atta", "address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two oil from amazon", "intent": "order_item", "slots": {"item": "bread", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add rice to cart", "intent": "add_to_cart", "slots": {"item": "sugar"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get milk delivered to my office", "intent": "order_item", "slots": {"item": "eggs", "address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two atta from amazon", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add atta to cart", "intent": "add_to_cart", "slots": {"item": "bread"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find sugar on amazon", "intent": "search_item", "slots": {"item": "sugar"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 rice to cart", "intent": "add_to_cart", "slots": {"item": "milk", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 kg for milk", "intent": "change_quantity", "slots": {"item": "milk", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get bread delivered to my home", "intent": "order_item", "slots": {"item": "atta", "address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 3 packets eggs from flipkart", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add bread to cart", "intent": "add_to_cart", "slots": {"item": "bread"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy oil 2", "intent": "order_item", "slots": {"item": "atta", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add sugar to cart", "intent": "add_to_cart", "slots": {"item": "sugar"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 for sugar", "intent": "change_quantity", "slots": {"item": "milk", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find bread on flipkart", "intent": "search_item", "slots": {"item": "oil"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 3 packets oil to cart", "intent": "add_to_cart", "slots": {"item": "eggs", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add two atta to cart", "intent": "add_to_cart", "slots": {"item": "rice", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for rice", "intent": "change_quantity", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add oil to cart", "intent": "add_to_cart", "slots": {"item": "sugar"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 3 packets sugar to cart", "intent": "add_to_cart", "slots": {"item": "bread", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find eggs on flipkart", "intent": "search_item", "slots": {"item": "rice"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add oil to cart", "intent": "add_to_cart", "slots": {"item": "oil"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 kg atta from flipkart", "intent": "order_item", "slots": {"item": "atta", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 kg for atta", "intent": "change_quantity", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get oil delivered to my office", "intent": "order_item", "slots": {"item": "milk", "address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add rice to cart", "intent": "add_to_cart", "slots": {"item": "bread"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to two", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy atta 2", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for bread", "intent": "search_item", "slots": {"item": "sugar"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy sugar 3 packets", "intent": "order_item", "slots": {"item": "rice", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get bread delivered to my home", "intent": "order_item", "slots": {"item": "oil", "address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy bread two", "intent": "order_item", "slots": {"item": "rice", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy atta two", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Add two atta to cart", "intent": "add_to_cart", "slots": {"item": "eggs", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for sugar", "intent": "search_item", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get oil delivered to my home", "intent": "order_item", "slots": {"item": "bread", "address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 3 packets for rice", "intent": "change_quantity", "slots": {"item": "milk", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add oil to cart", "intent": "add_to_cart", "slots": {"item": "atta"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add bread to cart", "intent": "add_to_cart", "slots": {"item": "milk"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find sugar on flipkart", "intent": "search_item", "slots": {"item": "sugar"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 3 packets bread to cart", "intent": "add_to_cart", "slots": {"item": "milk", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for atta", "intent": "change_quantity", "slots": {"item": "rice", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 3 packets", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 sugar from amazon", "intent": "order_item", "slots": {"item": "atta", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add sugar to cart", "intent": "add_to_cart", "slots": {"item": "rice"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 milk to cart", "intent": "add_to_cart", "slots": {"item": "eggs", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get bread delivered to my office", "intent": "order_item", "slots": {"item": "sugar", "address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 bread to cart", "intent": "add_to_cart", "slots": {"item": "milk", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add atta to cart", "intent": "add_to_cart", "slots": {"item": "atta"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for oil", "intent": "search_item", "slots": {"item": "rice"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get sugar delivered to my office", "intent": "order_item", "slots": {"item": "milk", "address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get atta delivered to my home", "intent": "order_item", "slots": {"item": "eggs", "address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for rice", "intent": "search_item", "slots": {"item": "eggs"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg oil to cart", "intent": "add_to_cart", "slots": {"item": "bread", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find atta on amazon", "intent": "search_item", "slots": {"item": "atta"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get rice delivered to my office", "intent": "order_item", "slots": {"item": "bread", "address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy sugar 2", "intent": "order_item", "slots": {"item": "eggs", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for sugar", "intent": "search_item", "slots": {"item": "atta"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find oil on flipkart", "intent": "search_item", "slots": {"item": "rice"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy sugar 2", "intent": "order_item", "slots": {"item": "sugar", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for milk", "intent": "search_item", "slots": {"item": "bread"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg eggs to cart", "intent": "add_to_cart", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add eggs to cart", "intent": "add_to_cart", "slots": {"item": "bread"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add milk to cart", "intent": "add_to_cart", "slots": {"item": "sugar"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for atta", "intent": "search_item", "slots": {"item": "sugar"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to two", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 3 packets", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy atta 3 packets", "intent": "order_item", "slots": {"item": "milk", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 atta from zepto", "intent": "order_item", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy milk 2 kg", "intent": "order_item", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add oil to cart", "intent": "add_to_cart", "slots": {"item": "oil"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 kg for milk", "intent": "change_quantity", "slots": {"item": "milk", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Find oil on amazon", "intent": "search_item", "slots": {"item": "oil"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 kg for oil", "intent": "change_quantity", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 atta to cart", "intent": "add_to_cart", "slots": {"item": "sugar", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for eggs", "intent": "search_item", "slots": {"item": "bread"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find atta on flipkart", "intent": "search_item", "slots": {"item": "atta"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 for atta", "intent": "change_quantity", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add two atta to cart", "intent": "add_to_cart", "slots": {"item": "eggs", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy rice 3 packets", "intent": "order_item", "slots": {"item": "sugar", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get milk delivered to my office", "intent": "order_item", "slots": {"item": "sugar", "address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two oil from flipkart", "intent": "order_item", "slots": {"item": "atta", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add oil to cart", "intent": "add_to_cart", "slots": {"item": "oil"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy bread 3 packets", "intent": "order_item", "slots": {"item": "rice", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add oil to cart", "intent": "add_to_cart", "slots": {"item": "milk"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find oil on zepto", "intent": "search_item", "slots": {"item": "rice"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Add two eggs to cart", "intent": "add_to_cart", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg bread to cart", "intent": "add_to_cart", "slots": {"item": "atta", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for sugar", "intent": "search_item", "slots": {"item": "sugar"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Find eggs on flipkart", "intent": "search_item", "slots": {"item": "oil"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find atta on zepto", "intent": "search_item", "slots": {"item": "atta"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy milk 3 packets", "intent": "order_item", "slots": {"item": "rice", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for sugar", "intent": "search_item", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find bread on zepto", "intent": "search_item", "slots": {"item": "atta"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find eggs on zepto", "intent": "search_item", "slots": {"item": "bread"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get rice delivered to my home", "intent": "order_item", "slots": {"item": "atta", "address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to two", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find eggs on zepto", "intent": "search_item", "slots": {"item": "milk"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for milk", "intent": "search_item", "slots": {"item": "milk"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add milk to cart", "intent": "add_to_cart", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Find milk on amazon", "intent": "search_item", "slots": {"item": "atta"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for oil", "intent": "search_item", "slots": {"item": "sugar"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 kg eggs from flipkart", "intent": "order_item", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg oil to cart", "intent": "add_to_cart", "slots": {"item": "bread", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find atta on flipkart", "intent": "search_item", "slots": {"item": "sugar"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for sugar", "intent": "search_item", "slots": {"item": "atta"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 kg oil from flipkart", "intent": "order_item", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add two milk to cart", "intent": "add_to_cart", "slots": {"item": "milk", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 3 packets eggs from amazon", "intent": "order_item", "slots": {"item": "bread", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get bread delivered to my office", "intent": "order_item", "slots": {"item": "milk", "address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 3 packets sugar to cart", "intent": "add_to_cart", "slots": {"item": "sugar", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get eggs delivered to my home", "intent": "order_item", "slots": {"item": "eggs", "address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Find bread on amazon", "intent": "search_item", "slots": {"item": "bread"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 oil from amazon", "intent": "order_item", "slots": {"item": "milk", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add oil to cart", "intent": "add_to_cart", "slots": {"item": "sugar"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 eggs from amazon", "intent": "order_item", "slots": {"item": "milk", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get eggs delivered to my office", "intent": "order_item", "slots": {"item": "eggs", "address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add milk to cart", "intent": "add_to_cart", "slots": {"item": "milk"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy oil two", "intent": "order_item", "slots": {"item": "rice", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for rice", "intent": "search_item", "slots": {"item": "atta"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add eggs to cart", "intent": "add_to_cart", "slots": {"item": "sugar"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg bread to cart", "intent": "add_to_cart", "slots": {"item": "milk", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two rice from zepto", "intent": "order_item", "slots": {"item": "milk", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for bread", "intent": "change_quantity", "slots": {"item": "sugar", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for sugar", "intent": "search_item", "slots": {"item": "eggs"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 3 packets", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find atta on flipkart", "intent": "search_item", "slots": {"item": "milk"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two eggs from zepto", "intent": "order_item", "slots": {"item": "sugar", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for bread", "intent": "change_quantity", "slots": {"item": "sugar", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 3 packets bread from flipkart", "intent": "order_item", "slots": {"item": "bread", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get milk delivered to my home", "intent": "order_item", "slots": {"item": "rice", "address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for rice", "intent": "search_item", "slots": {"item": "sugar"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get sugar delivered to my home", "intent": "order_item", "slots": {"item": "eggs", "address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg atta to cart", "intent": "add_to_cart", "slots": {"item": "atta", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two milk from zepto", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy bread two", "intent": "order_item", "slots": {"item": "bread", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get rice delivered to my home", "intent": "order_item", "slots": {"item": "bread", "address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy bread 2", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for oil", "intent": "search_item", "slots": {"item": "atta"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for rice", "intent": "search_item", "slots": {"item": "atta"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find sugar on flipkart", "intent": "search_item", "slots": {"item": "milk"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy oil two", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 3 packets bread to cart", "intent": "add_to_cart", "slots": {"item": "atta", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two rice from flipkart", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Get eggs delivered to my office", "intent": "order_item", "slots": {"item": "eggs", "address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 3 packets", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Find oil on flipkart", "intent": "search_item", "slots": {"item": "rice"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get sugar delivered to my office", "intent": "order_item", "slots": {"item": "atta", "address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 3 packets", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 kg milk from zepto", "intent": "order_item", "slots": {"item": "milk", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get eggs delivered to my home", "intent": "order_item", "slots": {"item": "oil", "address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for oil", "intent": "change_quantity", "slots": {"item": "oil", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two eggs from amazon", "intent": "order_item", "slots": {"item": "bread", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for milk", "intent": "change_quantity", "slots": {"item": "oil", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for oil", "intent": "change_quantity", "slots": {"item": "bread", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 eggs from zepto", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 3 packets for atta", "intent": "change_quantity", "slots": {"item": "bread", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 kg for milk", "intent": "change_quantity", "slots": {"item": "rice", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 for oil", "intent": "change_quantity", "slots": {"item": "milk", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy atta 2", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg bread to cart", "intent": "add_to_cart", "slots": {"item": "bread", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get atta delivered to my office", "intent": "order_item", "slots": {"item": "eggs", "address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy bread 2", "intent": "order_item", "slots": {"item": "bread", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add milk to cart", "intent": "add_to_cart", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get milk delivered to my home", "intent": "order_item", "slots": {"item": "oil", "address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 sugar to cart", "intent": "add_to_cart", "slots": {"item": "oil", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add oil to cart", "intent": "add_to_cart", "slots": {"item": "milk"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find rice on flipkart", "intent": "search_item", "slots": {"item": "bread"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for rice", "intent": "search_item", "slots": {"item": "oil"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get bread delivered to my office", "intent": "order_item", "slots": {"item": "oil", "address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for eggs", "intent": "change_quantity", "slots": {"item": "oil", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy oil 2", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find rice on amazon", "intent": "search_item", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for bread", "intent": "search_item", "slots": {"item": "rice"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy sugar 2 kg", "intent": "order_item", "slots": {"item": "rice", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy sugar 3 packets", "intent": "order_item", "slots": {"item": "atta", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get atta delivered to my home", "intent": "order_item", "slots": {"item": "rice", "address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get bread delivered to my office", "intent": "order_item", "slots": {"item": "bread", "address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 kg for atta", "intent": "change_quantity", "slots": {"item": "sugar", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for bread", "intent": "search_item", "slots": {"item": "sugar"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy bread 2 kg", "intent": "order_item", "slots": {"item": "sugar", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find sugar on flipkart", "intent": "search_item", "slots": {"item": "milk"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find sugar on zepto", "intent": "search_item", "slots": {"item": "milk"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg sugar to cart", "intent": "add_to_cart", "slots": {"item": "oil", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy rice 3 packets", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get eggs delivered to my office", "intent": "order_item", "slots": {"item": "sugar", "address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 3 packets for milk", "intent": "change_quantity", "slots": {"item": "atta", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 3 packets for bread", "intent": "change_quantity", "slots": {"item": "eggs", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two milk from zepto", "intent": "order_item", "slots": {"item": "sugar", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add bread to cart", "intent": "add_to_cart", "slots": {"item": "sugar"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 atta to cart", "intent": "add_to_cart", "slots": {"item": "bread", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get rice delivered to my home", "intent": "order_item", "slots": {"item": "oil", "address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for atta", "intent": "search_item", "slots": {"item": "eggs"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find bread on zepto", "intent": "search_item", "slots": {"item": "bread"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add milk to cart", "intent": "add_to_cart", "slots": {"item": "atta"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 3 packets eggs to cart", "intent": "add_to_cart", "slots": {"item": "eggs", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Get eggs delivered to my home", "intent": "order_item", "slots": {"item": "oil", "address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find bread on zepto", "intent": "search_item", "slots": {"item": "rice"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for rice", "intent": "search_item", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg bread to cart", "intent": "add_to_cart", "slots": {"item": "eggs", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy rice 2", "intent": "order_item", "slots": {"item": "rice", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy sugar two", "intent": "order_item", "slots": {"item": "bread", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy atta 3 packets", "intent": "order_item", "slots": {"item": "sugar", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find bread on zepto", "intent": "search_item", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 3 packets", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 kg milk to cart", "intent": "add_to_cart", "slots": {"item": "eggs", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for bread", "intent": "search_item", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for bread", "intent": "search_item", "slots": {"item": "milk"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "play music", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add bread to cart", "intent": "add_to_cart", "slots": {"item": "bread"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "office"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add two sugar to cart", "intent": "add_to_cart", "slots": {"item": "milk", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for sugar", "intent": "change_quantity", "slots": {"item": "atta", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy milk two", "intent": "order_item", "slots": {"item": "eggs", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy oil 2", "intent": "order_item", "slots": {"item": "sugar", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 oil from amazon", "intent": "order_item", "slots": {"item": "atta", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add atta to cart", "intent": "add_to_cart", "slots": {"item": "atta"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add atta to cart", "intent": "add_to_cart", "slots": {"item": "sugar"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 3 packets", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 3 packets for oil", "intent": "change_quantity", "slots": {"item": "bread", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add 2 rice to cart", "intent": "add_to_cart", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two milk from flipkart", "intent": "order_item", "slots": {"item": "bread", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 3 packets for sugar", "intent": "change_quantity", "slots": {"item": "atta", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find oil on flipkart", "intent": "search_item", "slots": {"item": "milk"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 kg for rice", "intent": "change_quantity", "slots": {"item": "sugar", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "office"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for eggs", "intent": "search_item", "slots": {"item": "rice"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 3 packets milk from zepto", "intent": "order_item", "slots": {"item": "milk", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Buy milk 3 packets", "intent": "order_item", "slots": {"item": "bread", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Deliver to my home", "intent": "select_address", "slots": {"address": "office"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "what is weather", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 oil from flipkart", "intent": "order_item", "slots": {"item": "eggs", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 3 packets for rice", "intent": "change_quantity", "slots": {"item": "eggs", "quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "book a flight", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 3 packets eggs from flipkart", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add atta to cart", "intent": "add_to_cart", "slots": {"item": "bread"}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for bread", "intent": "search_item", "slots": {"item": "eggs"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two eggs from flipkart", "intent": "order_item", "slots": {"item": "atta", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 3 packets for milk", "intent": "change_quantity", "slots": {"item": "milk", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for milk", "intent": "search_item", "slots": {"item": "sugar"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 kg for milk", "intent": "change_quantity", "slots": {"item": "milk", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two milk from zepto", "intent": "order_item", "slots": {"item": "eggs", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Add two eggs to cart", "intent": "add_to_cart", "slots": {"item": "oil", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity two for sugar", "intent": "change_quantity", "slots": {"item": "sugar", "quantity": 2}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Add bread to cart", "intent": "add_to_cart", "slots": {"item": "milk"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Set quantity 2 for eggs", "intent": "change_quantity", "slots": {"item": "milk", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my office", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Proceed to checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order two oil from zepto", "intent": "order_item", "slots": {"item": "oil", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to 2 kg", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "tell me a joke", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "open camera", "intent": "UNKNOWN", "slots": {}, "difficulty": "easy", "source": "synthetic"}
+{"text": "Checkout", "intent": "checkout", "slots": {}, "app": "flipkart", "difficulty": "easy", "source": "synthetic"}
+{"text": "Find sugar on amazon", "intent": "search_item", "slots": {"item": "eggs"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Change quantity to two", "intent": "change_quantity", "slots": {"quantity": 2}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Get it delivered to my home", "intent": "select_address", "slots": {"address": "home"}, "app": "zepto", "difficulty": "easy", "source": "synthetic"}
+{"text": "Order 2 bread from zepto", "intent": "order_item", "slots": {"item": "atta", "quantity": 2}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}
+{"text": "Search for oil", "intent": "search_item", "slots": {"item": "oil"}, "app": "amazon", "difficulty": "easy", "source": "synthetic"}

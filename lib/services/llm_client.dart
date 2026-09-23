@@ -31,19 +31,23 @@ class IntentClassification {
 class LlmClient {
   String _endpoint;
   String _apiKey;
+  String _model;
   final String _embeddingEndpoint;
   
   LlmClient({
     String? endpoint,
     String? apiKey,
+    String? model,
     String? embeddingEndpoint,
   }) : _endpoint = endpoint ?? dotenv.env['LLM_ENDPOINT'] ?? 'https://api.anthropic.com/v1/messages',
        _apiKey = apiKey ?? dotenv.env['LLM_API_KEY'] ?? '',
+       _model = model ?? dotenv.env['LLM_MODEL'] ?? 'claude-3-5-sonnet-20241022',
        _embeddingEndpoint = embeddingEndpoint ?? dotenv.env['EMBEDDING_ENDPOINT'] ?? '';
   
-  void updateConfig({String? endpoint, String? apiKey}) {
+  void updateConfig({String? endpoint, String? apiKey, String? model}) {
     if (endpoint != null) _endpoint = endpoint;
     if (apiKey != null) _apiKey = apiKey;
+    if (model != null) _model = model;
   }
   
   /// Classify user intent from utterance + optional UI context
@@ -165,7 +169,7 @@ Output the Flow EXCLUSIVELY as valid JSON. Do not include markdown code blocks o
     }
     
     final payload = {
-      "model": "claude-3-5-sonnet-20241022",
+      "model": _model,
       "max_tokens": 4096,
       "system": systemPrompt,
       "messages": [

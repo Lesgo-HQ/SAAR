@@ -1,223 +1,107 @@
 import 'dart:math';
 import '../models/flow.dart';
+import '../models/parsed_intent.dart';
 import 'flow_store.dart';
+import 'intent_model.dart';
 import 'llm_client.dart';
+import 'slot_extractor.dart';
 
 class MatchResult {
   final Flow? flow;
   final double confidence;
+  final double margin;
   final Map<String, dynamic> resolvedSlots;
   final bool needsClarification;
   final String? clarificationQuestion;
-
-  MatchResult({
-    this.flow,
-    this.confidence = 0.0,
-    this.resolvedSlots = const {},
-    this.needsClarification = false,
-    this.clarificationQuestion,
-  });
+  final bool isUnknown;
+  final ParsedIntent? parsedIntent;
+  MatchResult({this.flow, this.confidence=0, this.margin=0, this.resolvedSlots=const{}, this.needsClarification=false, this.clarificationQuestion, this.isUnknown=false, this.parsedIntent});
 }
 
 class FlowMatcher {
   final FlowStore _store;
   final LlmClient _llm;
-  static const double _confidenceThreshold = 0.6;
+  final IntentModel? _local;
+  final SlotExtractor _extractor = SlotExtractor();
+  static const double _threshold = 0.65;
+  static const double _unknownThreshold = 0.45;
+  static const double _marginThreshold = 0.07;
   static const int _topK = 3;
 
-  FlowMatcher(this._store, this._llm);
+  FlowMatcher(this._store, this._llm, {IntentModel? localModel}) : _local = localModel;
 
-  /// Match an utterance to a stored flow using embedding similarity + optional LLM re-rank
   Future<MatchResult> match(String utterance, {Map<String, dynamic> extractedSlots = const {}}) async {
+    final slots = extractedSlots.isEmpty ? _extractor.extract(utterance) : extractedSlots;
+    ParsedIntent? parsed;
+    if (_local != null) {
+      try { parsed = await _local!.parse(utterance); if (parsed.isUnknown) return MatchResult(isUnknown: true, needsClarification: true, clarificationQuestion: "I don't have a learned workflow for that task. Would you like to teach me?", parsedIntent: parsed); } catch (_) {}
+    }
     if (_store.embeddings.isEmpty) {
-      return MatchResult(
-        needsClarification: true,
-        clarificationQuestion: "I don't know any flows yet. Would you like to teach me one?",
-      );
+      return MatchResult(isUnknown: true, needsClarification: true, clarificationQuestion: "I don't have a learned workflow for that task. Would you like to teach me?", parsedIntent: parsed);
     }
-
-    // 1. Embed the utterance
-    final utteranceEmbedding = await _llm.embed(utterance);
-
-    // 2. Cosine similarity against all stored embeddings
-    final List<MapEntry<FlowEmbedding, double>> similarities = _store.embeddings.map((e) {
-      return MapEntry(e, _cosineSimilarity(utteranceEmbedding, e.vector));
-    }).toList();
-
-    similarities.sort((a, b) => b.value.compareTo(a.value));
-
-    // 3. Take top-k candidates
-    final topKEmbeddings = similarities.take(_topK).toList();
-
-    if (topKEmbeddings.isEmpty) {
-      return MatchResult(
-        needsClarification: true,
-        clarificationQuestion: "I couldn't find any matching flows.",
-      );
+    final emb = _local != null ? await _local!.embed(utterance) : await _llm.embed(utterance);
+    final sims = _store.embeddings.map((e) => MapEntry(e, _cos(emb, e.vector))).toList()..sort((a,b)=>b.value.compareTo(a.value));
+    final top = sims.take(_topK).toList();
+    if (top.isEmpty) return MatchResult(isUnknown: true, needsClarification: true, clarificationQuestion: "I don't have a learned workflow for that task. Would you like to teach me?", parsedIntent: parsed);
+    final best = top.first;
+    final second = top.length>1? top[1].value:0.0;
+    final margin = best.value - second;
+    if (best.value < _unknownThreshold) {
+      return MatchResult(isUnknown: true, confidence: best.value, margin: margin, needsClarification: true, clarificationQuestion: "I don't have a learned workflow for that task. Would you like to teach me?", parsedIntent: parsed);
     }
-
-    final bestMatch = topKEmbeddings.first;
-
-    // Retrieve the Flow objects for candidates
-    final candidates = <Flow>[];
-    for (var em in topKEmbeddings) {
-      final f = await _store.getFlow(em.key.flowId);
-      if (f != null) candidates.add(f);
+    final candidates=[] as List<Flow>;
+    for (final e in top) { final f=await _store.getFlow(e.key.flowId); if (f!=null) candidates.add(f); }
+    if (candidates.isEmpty) return MatchResult(isUnknown: true, needsClarification: true, clarificationQuestion: "I don't have a learned workflow for that task. Would you like to teach me?");
+    final isAmbiguous = margin < _marginThreshold && candidates.length>1;
+    if (isAmbiguous) {
+      final q = _ambiguityQuestion(candidates.take(2).toList());
+      return MatchResult(confidence: best.value, margin: margin, needsClarification: true, clarificationQuestion: q, parsedIntent: parsed);
     }
-
-    if (candidates.isEmpty) {
-      return MatchResult(
-        needsClarification: true,
-        clarificationQuestion: "I found matching embeddings but no flow data. Database may be corrupted.",
-      );
-    }
-
-    // 4. If top match confidence > threshold and clearly best, use it directly
-    if (bestMatch.value > _confidenceThreshold) {
-      bool isAmbiguous = false;
-      if (topKEmbeddings.length > 1) {
-        final secondBest = topKEmbeddings[1];
-        // If top two are very close, it's ambiguous
-        if (bestMatch.value - secondBest.value < 0.05) {
-          isAmbiguous = true;
-        }
-      }
-
-      // 5. If multiple close matches, use LLM to re-rank/verify
-      if (isAmbiguous && candidates.length > 1) {
-        return await _llmRerank(utterance, candidates, extractedSlots);
-      } else {
-        final flow = candidates.first;
-        // 6. Resolve slots
-        final resolvedSlots = _resolveSlots(flow, extractedSlots);
-        final hasUnresolved = resolvedSlots.values.any((v) => v == null);
-
-        return MatchResult(
-          flow: flow,
-          confidence: bestMatch.value,
-          resolvedSlots: resolvedSlots,
-          needsClarification: hasUnresolved,
-          clarificationQuestion: hasUnresolved
-              ? _buildSlotQuestion(flow, resolvedSlots)
-              : null,
-        );
+    if (best.value < _threshold) {
+      try {
+        final reranked = await _llmRerank(utterance, candidates, slots);
+        if (reranked.confidence < _threshold) return MatchResult(confidence: reranked.confidence, margin: margin, needsClarification: true, clarificationQuestion: 'I found "${candidates.first.triggerIntent}" but I\'m not confident. Should I proceed?', parsedIntent: parsed);
+        return reranked;
+      } catch (_) {
+        return MatchResult(confidence: best.value, margin: margin, needsClarification: true, clarificationQuestion: 'I found "${candidates.first.triggerIntent}" but I\'m not fully confident. Should I proceed?', parsedIntent: parsed);
       }
     }
-
-    // Below threshold — try LLM re-rank if we have candidates
-    if (candidates.isNotEmpty) {
-      return await _llmRerank(utterance, candidates, extractedSlots);
-    }
-
-    return MatchResult(
-      needsClarification: true,
-      clarificationQuestion: "I'm not confident about any matching flow. Could you be more specific?",
-    );
+    final flow=candidates.first;
+    final resolved=_resolveSlots(flow, slots);
+    final hasUnresolved=resolved.values.any((v)=>v==null);
+    return MatchResult(flow: flow, confidence: best.value, margin: margin, resolvedSlots: resolved, needsClarification: hasUnresolved, clarificationQuestion: hasUnresolved? _slotQuestion(flow,resolved):null, parsedIntent: parsed);
   }
 
-  /// Cosine similarity between two vectors
-  double _cosineSimilarity(List<double> a, List<double> b) {
-    if (a.length != b.length || a.isEmpty) return 0.0;
-    double dotProduct = 0.0;
-    double normA = 0.0;
-    double normB = 0.0;
-    for (int i = 0; i < a.length; i++) {
-      dotProduct += a[i] * b[i];
-      normA += a[i] * a[i];
-      normB += b[i] * b[i];
-    }
-    if (normA == 0.0 || normB == 0.0) return 0.0;
-    return dotProduct / (sqrt(normA) * sqrt(normB));
+  String _ambiguityQuestion(List<Flow> c) {
+    final opts = c.asMap().entries.map((e)=>'${e.key+1}. ${e.value.triggerIntent}').join('\n');
+    return 'I found two possible workflows:\n$opts\nWhich one do you want?';
   }
 
-  /// Resolve extracted slot values against a flow's slot definitions
-  Map<String, dynamic> _resolveSlots(Flow flow, Map<String, dynamic> extractedSlots) {
-    final Map<String, dynamic> resolved = {};
-    for (var slot in flow.slots) {
-      if (extractedSlots.containsKey(slot.name)) {
-        resolved[slot.name] = extractedSlots[slot.name];
-      } else if (slot.defaultValue != null) {
-        resolved[slot.name] = slot.defaultValue;
-      } else {
-        // Mark as unresolved
-        resolved[slot.name] = null;
-      }
-    }
-    return resolved;
+  double _cos(List<double> a, List<double> b) {
+    if (a.length!=b.length||a.isEmpty) return 0;
+    double dot=0,na=0,nb=0; for(int i=0;i<a.length;i++){dot+=a[i]*b[i];na+=a[i]*a[i];nb+=b[i]*b[i];}
+    if(na==0||nb==0) return 0; return dot/(sqrt(na)*sqrt(nb));
   }
 
-  /// Build a question about unresolved slots
-  String _buildSlotQuestion(Flow flow, Map<String, dynamic> resolvedSlots) {
-    final unresolved = resolvedSlots.entries
-        .where((e) => e.value == null)
-        .map((e) => e.key)
-        .toList();
-    if (unresolved.length == 1) {
-      final slotDef = flow.slots.firstWhere(
-        (s) => s.name == unresolved.first,
-        orElse: () => flow.slots.first,
-      );
-      if (slotDef.values != null && slotDef.values!.isNotEmpty) {
-        return 'What ${unresolved.first}? Options: ${slotDef.values!.join(', ')}';
-      }
-      return 'What ${unresolved.first} should I use?';
-    }
-    return 'I need values for: ${unresolved.join(', ')}. Please specify.';
+  Map<String,dynamic> _resolveSlots(Flow flow, Map<String,dynamic> ex){
+    final m={}; for(final s in flow.slots){ if(ex.containsKey(s.name)) m[s.name]=ex[s.name]; else if(s.defaultValue!=null) m[s.name]=s.defaultValue; else m[s.name]=null; } return Map<String,dynamic>.from(m);
   }
-
-  /// Use LLM to re-rank candidates and pick the best match
-  Future<MatchResult> _llmRerank(
-    String utterance,
-    List<Flow> candidates,
-    Map<String, dynamic> extractedSlots,
-  ) async {
-    try {
-      // Build a prompt for the LLM to pick the best flow
-      final candidateDescriptions = candidates.asMap().entries.map((entry) {
-        final flow = entry.value;
-        return '${entry.key}: "${flow.triggerIntent}" (app: ${flow.appPackage}, '
-            'slots: ${flow.slots.map((s) => s.name).join(', ')})';
-      }).join('\n');
-
-      final classification = await _llm.classifyIntent(
-        '$utterance\n\nAvailable flows:\n$candidateDescriptions\n\nPick the best matching flow index (0-based) or say "none".',
-      );
-
-      // Try to extract a flow index from the response
-      final taskDesc = classification.taskDescription ?? '';
-      Flow bestFlow = candidates.first;
-
-      // Simple heuristic: check if any candidate's trigger_intent is mentioned
-      for (final candidate in candidates) {
-        if (taskDesc.toLowerCase().contains(candidate.triggerIntent.toLowerCase())) {
-          bestFlow = candidate;
-          break;
-        }
-      }
-
-      final resolvedSlots = _resolveSlots(bestFlow, extractedSlots);
-      final hasUnresolved = resolvedSlots.values.any((v) => v == null);
-
-      return MatchResult(
-        flow: bestFlow,
-        confidence: 0.75, // LLM-verified match
-        resolvedSlots: resolvedSlots,
-        needsClarification: hasUnresolved,
-        clarificationQuestion: hasUnresolved
-            ? _buildSlotQuestion(bestFlow, resolvedSlots)
-            : null,
-      );
-    } catch (e) {
-      // LLM re-rank failed, fall back to first candidate
-      final flow = candidates.first;
-      final resolvedSlots = _resolveSlots(flow, extractedSlots);
-      return MatchResult(
-        flow: flow,
-        confidence: 0.5,
-        resolvedSlots: resolvedSlots,
-        needsClarification: true,
-        clarificationQuestion: 'I found "${flow.triggerIntent}" but I\'m not fully confident. Should I proceed?',
-      );
-    }
+  String _slotQuestion(Flow f, Map<String,dynamic> r){
+    final u=r.entries.where((e)=>e.value==null).map((e)=>e.key).toList();
+    if(u.length==1){ final d=f.slots.firstWhere((s)=>s.name==u.first,orElse:()=>f.slots.first); if(d.values!=null&&d.values!.isNotEmpty) return 'What ${u.first}? Options: ${d.values!.join(', ')}'; return 'What ${u.first} should I use?'; }
+    return 'I need values for: ${u.join(', ')}. Please specify.';
+  }
+  Future<MatchResult> _llmRerank(String utterance, List<Flow> cands, Map<String,dynamic> slots) async {
+    final desc=cands.asMap().entries.map((e)=>'${e.key}: "${e.value.triggerIntent}" (app:${e.value.appPackage}, slots:${e.value.slots.map((s)=>s.name).join(',')})').join('\n');
+    final cl=await _llm.classifyIntent('$utterance\n\nAvailable flows:\n$desc\n\nPick best index or none.');
+    final td=(cl.taskDescription??'').toLowerCase();
+    Flow best=cands.first;
+    for(final cand in cands){ if(td.contains(cand.triggerIntent.toLowerCase())){best=cand; break;}}
+    final m=RegExp(r'\b(\d+)\b').firstMatch(td);
+    if(m!=null){ final idx=int.tryParse(m.group(1)!); if(idx!=null&&idx>=0&&idx<cands.length) best=cands[idx];}
+    if(td.contains('none')||td.contains('unknown')) return MatchResult(isUnknown:true,needsClarification:true,clarificationQuestion:"I don't have a learned workflow for that task. Would you like to teach me?");
+    final resolved=_resolveSlots(best,slots);
+    final hasUnresolved=resolved.values.any((v)=>v==null);
+    return MatchResult(flow: best, confidence: 0.75, resolvedSlots: resolved, needsClarification: hasUnresolved, clarificationQuestion: hasUnresolved? _slotQuestion(best,resolved):null);
   }
 }

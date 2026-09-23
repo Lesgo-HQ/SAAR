@@ -10,6 +10,8 @@ import 'services/flow_matcher.dart';
 import 'services/replay_engine.dart';
 import 'services/flow_synthesizer.dart';
 import 'services/clarification_service.dart';
+import 'services/intent_model.dart';
+import 'services/slot_extractor.dart';
 
 enum AppState { idle, listening, teaching, synthesizing, matching, executing, waitingForClarification, error }
 
@@ -54,7 +56,7 @@ class AppController extends ChangeNotifier {
     _llm = LlmClient();
     _store = FlowStore();
     _clarification = ClarificationService();
-    _matcher = FlowMatcher(_store, _llm);
+    _matcher = FlowMatcher(_store, _llm, localModel: LocalIntentModel());
     _replay = ReplayEngine(_bridge, _llm, _clarification);
     _synthesizer = FlowSynthesizer(_llm);
     
@@ -98,26 +100,42 @@ class AppController extends ChangeNotifier {
   Future<void> _processUtterance(String utterance) async {
     _statusMessage = 'Understanding: "$utterance"';
     notifyListeners();
-    
+    final lower = utterance.toLowerCase();
+    if (lower.startsWith('teach') || lower.contains('teach me')) {
+      await _startTeaching(utterance, utterance);
+      return;
+    }
     try {
-      final classification = await _llm.classifyIntent(utterance);
-      
-      switch (classification.intent) {
-        case 'teach':
-          await _startTeaching(utterance, classification.taskDescription ?? utterance);
-          break;
-        case 'command':
-          await _startCommand(utterance, classification.extractedSlots);
-          break;
-        default:
-          _state = AppState.idle;
-          _statusMessage = 'I didn\'t understand that. Try saying "teach me to..." or "order..."';
-          notifyListeners();
+      final local = LocalIntentModel();
+      final parsed = await local.parse(utterance);
+      if (parsed.isUnknown) {
+        _state = AppState.waitingForClarification;
+        _clarificationQuestion = "I don't have a learned workflow for that task. Would you like to teach me?";
+        _statusMessage = _clarificationQuestion!;
+        notifyListeners();
+        return;
       }
-    } catch (e) {
-      _state = AppState.error;
-      _statusMessage = 'Error: $e';
-      notifyListeners();
+      await _startCommand(utterance, parsed.slots);
+    } catch (_) {
+      try {
+        final classification = await _llm.classifyIntent(utterance);
+        switch (classification.intent) {
+          case 'teach':
+            await _startTeaching(utterance, classification.taskDescription ?? utterance);
+            break;
+          case 'command':
+            await _startCommand(utterance, classification.extractedSlots);
+            break;
+          default:
+            _state = AppState.idle;
+            _statusMessage = 'I didn\'t understand that. Try saying "teach me to..." or "order..."';
+            notifyListeners();
+        }
+      } catch (e) {
+        _state = AppState.error;
+        _statusMessage = 'Error: $e';
+        notifyListeners();
+      }
     }
   }
   
